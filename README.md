@@ -1,3 +1,3 @@
 # BetterBinding
 
-A description of this package.
+Welcome to BetterBinding!
