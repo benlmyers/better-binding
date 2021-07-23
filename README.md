@@ -12,7 +12,7 @@ https://github.com/benlmyers/better-binding
 
 ## Usage
 
-BetterBinding has 4 binding-related operators you can use to make using `Binding` in your projects much quicker.
+BetterBinding has 5 binding-related operators you can use to make using `Binding` in your projects much quicker.
 
 ### Quick Constant
 
@@ -22,6 +22,14 @@ Define a constant using the `%` operator:
 %false // .constant(false)
 %variable // .constant(variable)
 %(-2.0) // .constant(-2.0)
+```
+
+### Quick Unwrap
+
+Unwrap a binding using the `%` operator:
+
+```swift
+%myBindingVar // myBindingVar.wrappedValue
 ```
 
 ### Conditional Unwrap
