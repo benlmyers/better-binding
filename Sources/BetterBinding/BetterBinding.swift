@@ -10,7 +10,7 @@ import SwiftUI
 prefix operator %
 
 @available(iOS 13, *)
-func == <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Equatable {
+public func == <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Equatable {
   Binding(
     get: {
       lhs.wrappedValue == rhs
@@ -24,7 +24,7 @@ func == <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Equatable {
 }
 
 @available(iOS 13, *)
-func ?? <T>(lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {
+public func ?? <T>(lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {
   Binding(
     get: { lhs.wrappedValue ?? rhs },
     set: { lhs.wrappedValue = $0 }
@@ -32,7 +32,7 @@ func ?? <T>(lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {
 }
 
 @available(iOS 13, *)
-prefix func ! <T>(lhs: Binding<Optional<T>>) -> Binding<T> {
+public prefix func ! <T>(lhs: Binding<Optional<T>>) -> Binding<T> {
   Binding(
     get: { lhs.wrappedValue! },
     set: { lhs.wrappedValue = $0 }
@@ -40,6 +40,6 @@ prefix func ! <T>(lhs: Binding<Optional<T>>) -> Binding<T> {
 }
 
 @available(iOS 13, *)
-prefix func % <T>(lhs: T) -> Binding<T> {
+public prefix func % <T>(lhs: T) -> Binding<T> {
   return .constant(lhs)
 }
