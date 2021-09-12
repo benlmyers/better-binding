@@ -57,3 +57,12 @@ Toggle("Option 0", isOn: $optionValue == 0)
 Toggle("Option 1", isOn: $optionValue == 1)
 Toggle("Option 2", isOn: $optionValue == 2)
 ```
+
+### Logical Operators
+
+Use binary locical operators to unify two `Binding<Bool>`s:
+
+```swift
+Toggle("A or B", isOn: $valueA || $valueB) // Toggling this will set both to the new value.
+Toggle("A and B", isOn: $valueA && $valueB) // Toggling this will set both to the new value.
+```
