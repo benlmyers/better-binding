@@ -25,6 +25,20 @@ public func == <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Equatable 
 }
 
 @available(iOS 13, *)
+public func != <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Equatable {
+  Binding(
+    get: {
+      lhs.wrappedValue != rhs
+    },
+    set: {
+      if !$0 {
+        lhs.wrappedValue = rhs
+      }
+    }
+  )
+}
+
+@available(iOS 13, *)
 public func || (lhs: Binding<Bool>, rhs: Binding<Bool>) -> Binding<Bool> {
   Binding(
     get: {
