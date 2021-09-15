@@ -39,6 +39,14 @@ public func != <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Equatable 
 }
 
 @available(iOS 13, *)
+public prefix func ! (lhs: Binding<Bool>) -> Binding<Bool> {
+  Binding(
+    get: { !lhs.wrappedValue },
+    set: { lhs.wrappedValue = !$0 }
+  )
+}
+
+@available(iOS 13, *)
 public func || (lhs: Binding<Bool>, rhs: Binding<Bool>) -> Binding<Bool> {
   Binding(
     get: {
