@@ -55,7 +55,7 @@ Check the equality of a `Binding<T>`'s unwrapped value with a `T` value, and get
 ```swift
 Toggle("Option 0", isOn: $optionValue == 0)
 Toggle("Option 1", isOn: $optionValue == 1)
-Toggle("Option 2", isOn: $optionValue == 2)
+Toggle("Option 2", isOn: $optionValue != 2)
 ```
 
 ### Logical Operators
@@ -65,4 +65,10 @@ Use binary locical operators to unify two `Binding<Bool>`s:
 ```swift
 Toggle("A or B", isOn: $valueA || $valueB) // Toggling this will set both to the new value.
 Toggle("A and B", isOn: $valueA && $valueB) // Toggling this will set both to the new value.
+```
+
+Negate a `Binding<Bool>`:
+
+```swift
+Toggle("Not A", isOn: !$valueA)
 ```
