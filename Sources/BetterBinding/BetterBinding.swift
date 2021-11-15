@@ -5,7 +5,6 @@
 //  Created by Ben Myers on 6/22/21.
 //
 
-#if os(iOS)
 import SwiftUI
 
 prefix operator %
@@ -92,5 +91,3 @@ public prefix func ! <T>(lhs: Binding<Optional<T>>) -> Binding<T> {
 public prefix func % <T>(lhs: T) -> Binding<T> {
   return .constant(lhs)
 }
-
-#endif
