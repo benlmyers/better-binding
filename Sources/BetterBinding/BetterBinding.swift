@@ -38,6 +38,46 @@ public func != <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Equatable 
 }
 
 @available(iOS 13, *)
+public func < <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Comparable {
+  Binding(
+    get: {
+      lhs.wrappedValue < rhs
+    },
+    set: { _ in }
+  )
+}
+
+@available(iOS 13, *)
+public func <= <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Comparable {
+  Binding(
+    get: {
+      lhs.wrappedValue <= rhs
+    },
+    set: { _ in }
+  )
+}
+
+@available(iOS 13, *)
+public func > <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Comparable {
+  Binding(
+    get: {
+      lhs.wrappedValue > rhs
+    },
+    set: { _ in }
+  )
+}
+
+@available(iOS 13, *)
+public func >= <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Comparable {
+  Binding(
+    get: {
+      lhs.wrappedValue >= rhs
+    },
+    set: { _ in }
+  )
+}
+
+@available(iOS 13, *)
 public prefix func ! (lhs: Binding<Bool>) -> Binding<Bool> {
   Binding(
     get: { !lhs.wrappedValue },
