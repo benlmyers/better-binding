@@ -58,6 +58,15 @@ Toggle("Option 1", isOn: $optionValue == 1)
 Toggle("Option 2", isOn: $optionValue != 2)
 ```
 
+### Binding and Non-Binding Comparison
+
+Compare a `Binding<T>` with a `T` value, and get a `Binding<Bool>` source of truth:
+
+```swift
+Toggle("Option 0", isOn: $optionValue < 2)
+Toggle("Option 1", isOn: $optionValue >= 5)
+```
+
 ### Logical Operators
 
 Use binary locical operators to unify two `Binding<Bool>`s:
