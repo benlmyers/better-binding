@@ -63,8 +63,8 @@ Toggle("Option 2", isOn: $optionValue != 2)
 Use binary locical operators to unify two `Binding<Bool>`s:
 
 ```swift
-Toggle("A or B", isOn: $valueA || $valueB) // Toggling this will set both to the new value.
-Toggle("A and B", isOn: $valueA && $valueB) // Toggling this will set both to the new value.
+Toggle(“A or B”, isOn: $valueA || $valueB) // Toggling this will set both to the new value.
+Toggle(“A and B”, isOn: $valueA && $valueB) // Toggling this will set both to the new value.
 ```
 
 Negate a `Binding<Bool>`:

@@ -9,7 +9,7 @@ import SwiftUI
 
 prefix operator %
 
-@available(iOS 13, *)
+@available(iOS 13, macOS 10.15, *)
 public func == <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Equatable {
   Binding(
     get: {
@@ -23,7 +23,7 @@ public func == <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Equatable 
   )
 }
 
-@available(iOS 13, *)
+@available(iOS 13, macOS 10.15, *)
 public func != <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Equatable {
   Binding(
     get: {
@@ -37,7 +37,7 @@ public func != <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Equatable 
   )
 }
 
-@available(iOS 13, *)
+@available(iOS 13, macOS 10.15, *)
 public func < <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Comparable {
   Binding(
     get: {
@@ -47,7 +47,7 @@ public func < <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Comparable 
   )
 }
 
-@available(iOS 13, *)
+@available(iOS 13, macOS 10.15, *)
 public func <= <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Comparable {
   Binding(
     get: {
@@ -57,7 +57,7 @@ public func <= <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Comparable
   )
 }
 
-@available(iOS 13, *)
+@available(iOS 13, macOS 10.15, *)
 public func > <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Comparable {
   Binding(
     get: {
@@ -67,7 +67,7 @@ public func > <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Comparable 
   )
 }
 
-@available(iOS 13, *)
+@available(iOS 13, macOS 10.15, *)
 public func >= <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Comparable {
   Binding(
     get: {
@@ -77,7 +77,7 @@ public func >= <T>(lhs: Binding<T>, rhs: T) -> Binding<Bool> where T: Comparable
   )
 }
 
-@available(iOS 13, *)
+@available(iOS 13, macOS 10.15, *)
 public prefix func ! (lhs: Binding<Bool>) -> Binding<Bool> {
   Binding(
     get: { !lhs.wrappedValue },
@@ -85,7 +85,7 @@ public prefix func ! (lhs: Binding<Bool>) -> Binding<Bool> {
   )
 }
 
-@available(iOS 13, *)
+@available(iOS 13, macOS 10.15, *)
 public func || (lhs: Binding<Bool>, rhs: Binding<Bool>) -> Binding<Bool> {
   Binding(
     get: {
@@ -98,7 +98,7 @@ public func || (lhs: Binding<Bool>, rhs: Binding<Bool>) -> Binding<Bool> {
   )
 }
 
-@available(iOS 13, *)
+@available(iOS 13, macOS 10.15, *)
 public func && (lhs: Binding<Bool>, rhs: Binding<Bool>) -> Binding<Bool> {
   Binding(
     get: {
@@ -111,7 +111,7 @@ public func && (lhs: Binding<Bool>, rhs: Binding<Bool>) -> Binding<Bool> {
   )
 }
 
-@available(iOS 13, *)
+@available(iOS 13, macOS 10.15, *)
 public func ?? <T>(lhs: Binding<Optional<T>>, rhs: T) -> Binding<T> {
   Binding(
     get: { lhs.wrappedValue ?? rhs },
